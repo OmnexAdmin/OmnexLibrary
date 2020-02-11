@@ -94,12 +94,14 @@ public class DocProAdminHomePage extends ProjectMethods {
 		return new DocProGroups(driver, test);
 		
 	}
-	
-	public DocProGroups clickOnGroupsMenu12() {
+	public DocProGroups clickOnGroupsMenutest() {
 		click(eleclickOnGroupsMenu,"Groups menu");
 		
 		return new DocProGroups(driver, test);
 		
 	}
+	
+	
+
 
 }
