@@ -3,18 +3,18 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Default suite]]">
   <test name="Default test(failed)(failed)">
     <classes>
-      <class name="TestCases.DocProBasicFunctionality">
+      <class name="TestCases.PreRequsite">
         <methods>
-          <include name="setData"/>
           <include name="beforeMethod"/>
+          <include name="login" invocation-numbers="41"/>
           <include name="afterTest"/>
           <include name="beforeSuite"/>
-          <include name="createParentLevels" invocation-numbers="10"/>
+          <include name="setData"/>
           <include name="afterSuite"/>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
         </methods>
-      </class> <!-- TestCases.DocProBasicFunctionality -->
+      </class> <!-- TestCases.PreRequsite -->
     </classes>
   </test> <!-- Default test(failed)(failed) -->
 </suite> <!-- Failed suite [Failed suite [Default suite]] -->

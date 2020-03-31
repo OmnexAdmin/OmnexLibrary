@@ -4,7 +4,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import CommonMethods.ProjectMethods;
-import Pages.LoginPage;
+import suitePages.LoginPage;
 
 public class MultipleLandingpagechangeusers extends ProjectMethods {
 

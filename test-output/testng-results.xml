@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="3" ignored="0" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Failed suite [Failed suite [Default suite]]" duration-ms="79212" started-at="2020-02-05T09:33:20Z" finished-at="2020-02-05T09:34:40Z">
+  <suite name="Default suite" duration-ms="996715" started-at="2020-03-19T11:34:37Z" finished-at="2020-03-19T11:51:14Z">
     <groups>
-      <group name="smoke">
-        <method signature="DocProBasicFunctionality.createParentLevels(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestCases.DocProBasicFunctionality@1f13d6e]" name="createParentLevels" class="TestCases.DocProBasicFunctionality"/>
-      </group> <!-- smoke -->
+      <group name="regression">
+        <method signature="DummyTestcase.requestDraft(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="requestDraft" class="TestCases.DummyTestcase"/>
+      </group> <!-- regression -->
     </groups>
-    <test name="Default test(failed)(failed)" duration-ms="79212" started-at="2020-02-05T09:33:20Z" finished-at="2020-02-05T09:34:40Z">
-      <class name="TestCases.DocProBasicFunctionality">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:TestCases.DocProBasicFunctionality@1f13d6e]" name="beforeSuite" is-config="true" duration-ms="2955" started-at="2020-02-05T15:03:17Z" finished-at="2020-02-05T15:03:20Z">
+    <test name="Default test" duration-ms="996715" started-at="2020-03-19T11:34:37Z" finished-at="2020-03-19T11:51:14Z">
+      <class name="TestCases.DummyTestcase">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="beforeSuite" is-config="true" duration-ms="4148" started-at="2020-03-19T17:04:33Z" finished-at="2020-03-19T17:04:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestCases.DocProBasicFunctionality@1f13d6e]" name="beforeTest" is-config="true" duration-ms="0" started-at="2020-02-05T15:03:20Z" finished-at="2020-02-05T15:03:20Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="beforeTest" is-config="true" duration-ms="0" started-at="2020-03-19T17:04:37Z" finished-at="2020-03-19T17:04:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="setData()[pri:0, instance:TestCases.DocProBasicFunctionality@1f13d6e]" name="setData" is-config="true" duration-ms="0" started-at="2020-02-05T15:03:20Z" finished-at="2020-02-05T15:03:20Z">
+        <test-method status="PASS" signature="setData()[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="setData" is-config="true" duration-ms="0" started-at="2020-03-19T17:04:37Z" finished-at="2020-03-19T17:04:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setData -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestCases.DocProBasicFunctionality@1f13d6e]" name="beforeMethod" is-config="true" duration-ms="4575" started-at="2020-02-05T15:03:21Z" finished-at="2020-02-05T15:03:26Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="beforeMethod" is-config="true" duration-ms="6057" started-at="2020-03-19T17:04:38Z" finished-at="2020-03-19T17:04:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="FAIL" signature="createParentLevels(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestCases.DocProBasicFunctionality@1f13d6e]" name="createParentLevels" duration-ms="72745" started-at="2020-02-05T15:03:26Z" data-provider="fetchData" finished-at="2020-02-05T15:04:38Z">
+        <test-method status="PASS" signature="requestDraft(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="requestDraft" duration-ms="93258" started-at="2020-03-19T17:04:44Z" data-provider="fetchData" finished-at="2020-03-19T17:06:17Z">
           <params>
             <param index="0">
-              <value>
-                <![CDATA[TC016]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Y]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Validate the  published document is displayed in TOC ]]>
-              </value>
-            </param>
-            <param index="3">
               <value>
                 <![CDATA[bh]]>
               </value>
             </param>
-            <param index="4">
+            <param index="1">
               <value>
                 <![CDATA[a1]]>
               </value>
             </param>
+            <param index="2">
+              <value>
+                <![CDATA[R1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[All Approvers Reqd(1 round,2 approvers)]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[(VH1)]]>
+              </value>
+            </param>
             <param index="5">
               <value>
-                <![CDATA[01.FCPA]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="6">
@@ -63,118 +63,67 @@
                 <![CDATA[]]>
               </value>
             </param>
-            <param index="7">
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- requestDraft -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="afterMethod" is-config="true" duration-ms="1717" started-at="2020-03-19T17:06:17Z" finished-at="2020-03-19T17:06:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="beforeMethod" is-config="true" duration-ms="5953" started-at="2020-03-19T17:06:19Z" finished-at="2020-03-19T17:06:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="requestDraft(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="requestDraft" duration-ms="282856" started-at="2020-03-19T17:06:25Z" data-provider="fetchData" finished-at="2020-03-19T17:11:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[a1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[R2]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1st round non mandatory  2nd Round with All Approvers Reqd]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[(VH1)]]>
+              </value>
+            </param>
+            <param index="5">
               <value>
                 <![CDATA[]]>
               </value>
             </param>
-            <param index="8">
+            <param index="6">
               <value>
                 <![CDATA[]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[QMS/FC/P/FCPA/0001]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[Assignment and Delegation of Work]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="15">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="16">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="17">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="18">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="19">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="20">
-              <value>
-                <![CDATA[B.I]]>
-              </value>
-            </param>
-            <param index="21">
-              <value>
-                <![CDATA[B Bhuvana  ]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="java.lang.RuntimeException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[text()='QMS/FC/P/FCPA/0001']"}
-  (Session info: chrome=79.0.3945.130)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'DESKTOP-FLV1Q8H', ip: '192.168.100.133', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\Omnex\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63994}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 3b792a926e400515b5fa6822389840f1
-*** Element info: {Using=xpath, value=//a[text()='QMS/FC/P/FCPA/0001']}]]>
+              <![CDATA[FAILED]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[text()='QMS/FC/P/FCPA/0001']"}
-  (Session info: chrome=79.0.3945.130)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'DESKTOP-FLV1Q8H', ip: '192.168.100.133', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\Omnex\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63994}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 3b792a926e400515b5fa6822389840f1
-*** Element info: {Using=xpath, value=//a[text()='QMS/FC/P/FCPA/0001']}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
-	at Pages.TOC.validateDocISRevised(TOC.java:135)
-	at TestCases.DocProBasicFunctionality.createParentLevels(DocProBasicFunctionality.java:133)
+              <![CDATA[java.lang.RuntimeException: FAILED
+	at Utilities.Reporter.reportStep(Reporter.java:33)
+	at Utilities.Reporter.reportStep(Reporter.java:43)
+	at CommonMethods.SeMethods.click(SeMethods.java:158)
+	at docProPages.Routes.createRoute(Routes.java:171)
+	at TestCases.DummyTestcase.requestDraft(DummyTestcase.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -202,23 +151,199 @@ Session ID: 3b792a926e400515b5fa6822389840f1
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createParentLevels -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:TestCases.DocProBasicFunctionality@1f13d6e]" name="afterMethod" is-config="true" duration-ms="1335" started-at="2020-02-05T15:04:38Z" finished-at="2020-02-05T15:04:40Z">
+        </test-method> <!-- requestDraft -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="afterMethod" is-config="true" duration-ms="1165" started-at="2020-03-19T17:11:08Z" finished-at="2020-03-19T17:11:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestCases.DocProBasicFunctionality@1f13d6e]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-02-05T15:04:40Z" finished-at="2020-02-05T15:04:40Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="beforeMethod" is-config="true" duration-ms="4891" started-at="2020-03-19T17:11:09Z" finished-at="2020-03-19T17:11:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="requestDraft(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="requestDraft" duration-ms="449552" started-at="2020-03-19T17:11:14Z" data-provider="fetchData" finished-at="2020-03-19T17:18:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[a1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[R3]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2 rounds with some mandatory and some non mandatory and mentioned mim number of approvers reqd]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[(VH]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[FAILED]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: FAILED
+	at Utilities.Reporter.reportStep(Reporter.java:33)
+	at Utilities.Reporter.reportStep(Reporter.java:43)
+	at CommonMethods.SeMethods.click(SeMethods.java:158)
+	at docProPages.Routes.createRoute(Routes.java:235)
+	at TestCases.DummyTestcase.requestDraft(DummyTestcase.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- requestDraft -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="afterMethod" is-config="true" duration-ms="1226" started-at="2020-03-19T17:18:44Z" finished-at="2020-03-19T17:18:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="beforeMethod" is-config="true" duration-ms="5409" started-at="2020-03-19T17:18:45Z" finished-at="2020-03-19T17:18:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="requestDraft(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="requestDraft" duration-ms="142723" started-at="2020-03-19T17:18:50Z" data-provider="fetchData" finished-at="2020-03-19T17:21:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[a1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[R4]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1 round having 2 approvers and another round has position based approvers]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[(VH)]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Doc Pro Position based Approver]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[FAILED]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: FAILED
+	at Utilities.Reporter.reportStep(Reporter.java:33)
+	at Utilities.Reporter.reportStep(Reporter.java:43)
+	at CommonMethods.SeMethods.type(SeMethods.java:137)
+	at docProPages.Routes.createRoute(Routes.java:268)
+	at TestCases.DummyTestcase.requestDraft(DummyTestcase.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- requestDraft -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="afterMethod" is-config="true" duration-ms="1184" started-at="2020-03-19T17:21:13Z" finished-at="2020-03-19T17:21:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-03-19T17:21:14Z" finished-at="2020-03-19T17:21:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:TestCases.DocProBasicFunctionality@1f13d6e]" name="afterSuite" is-config="true" duration-ms="370" started-at="2020-02-05T15:04:40Z" finished-at="2020-02-05T15:04:40Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:TestCases.DummyTestcase@144fc21]" name="afterSuite" is-config="true" duration-ms="464" started-at="2020-03-19T17:21:14Z" finished-at="2020-03-19T17:21:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- TestCases.DocProBasicFunctionality -->
-    </test> <!-- Default test(failed)(failed) -->
-  </suite> <!-- Failed suite [Failed suite [Default suite]] -->
+      </class> <!-- TestCases.DummyTestcase -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

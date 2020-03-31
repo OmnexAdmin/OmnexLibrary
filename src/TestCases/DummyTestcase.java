@@ -4,7 +4,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import CommonMethods.ProjectMethods;
-import Pages.LoginPage;
+import suitePages.LoginPage;
 
 public class DummyTestcase extends ProjectMethods{
 	
@@ -12,7 +12,7 @@ public class DummyTestcase extends ProjectMethods{
 	public void setData() {
 		
 		excelName = "TestingExcel";
-		dataSheetName="TC009";
+		dataSheetName="Sheet1";
 
 		test = startTestCase("Smoketesttarts", "Browser launched successfully");
 		
@@ -23,18 +23,17 @@ public class DummyTestcase extends ProjectMethods{
 	
 	@Test(dataProvider="fetchData",groups="regression")
 	
-	public void requestDraft(String userName, String passWord,String searchCriteria,String documentNumber,String documentName,String attachment,String code) throws Throwable {
+	public void requestDraft(String userName, String passWord ,String routeName,String routedesc,String code, String minNumofApproversReqd , String position) throws Throwable {
 		
 		testCaseName = "TC010 ";
 		testDescription = "New draft request";
 		test = startTestCase(testCaseName, testDescription);
+	
 		
-		new LoginPage(driver,test)
+		new LoginPage(driver, test)
 		.moduleLandingPageLogin(userName, passWord)
-		.clickonDocumentstab()
-		.clickOnNewDocDraftmenu()
-		.uploadNewDraft(searchCriteria,documentNumber,documentName,attachment,code) ;
-		
+		.clickOnRoutesMenu()
+		.createRoute(routeName, routedesc, code, minNumofApproversReqd, position);
 		
 	}
 
