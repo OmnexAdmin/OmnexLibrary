@@ -35,7 +35,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-	import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 	import org.openqa.selenium.support.ui.Select;
 	import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -53,7 +54,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 			Properties prop = new Properties();
 			try {
 				String path = System.getProperty("user.dir");
-				System.out.println(path); 
+				//System.out.println(path); 
 				prop.load(new FileInputStream(new File(path+"\\data\\config.properties")));
 			
 				//prop.load(new FileInputStream(new File("C:\\Users\\Omnex\\git\\EwQIMS_POM_Omnex\\EwQIMS_POM\\src\\main\\java\\data\\config.properties")));
@@ -74,7 +75,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 				String path = System.getProperty("user.dir");
 				if(browser.equalsIgnoreCase("chrome")) {
 				
-					System.setProperty("webdriver.chrome.driver",path+"\\drivers\\chromedriver.exe");
+					System.setProperty("webdriver.chrome.driver",path+"\\drivers\\chromedriverlatest.exe");
 					
 					//System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 					driver = new ChromeDriver();
@@ -126,6 +127,9 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 		public void type(WebElement ele, String data) {
 			try {
+				WebDriverWait wait = new WebDriverWait(driver,50);
+				wait.until(ExpectedConditions.visibilityOf(ele));			
+				wait.until(ExpectedConditions.elementToBeClickable(ele));	
 				ele.clear();
 				ele.sendKeys(data);
 				logger.info("The data: "+data+" entered successfully in field");
@@ -141,8 +145,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 		public void click(WebElement ele, String text) {
 			//String text = "";
 			try {
-				WebDriverWait wait = new WebDriverWait(driver,200);
-			
+				WebDriverWait wait = new WebDriverWait(driver,50);
+				wait.until(ExpectedConditions.visibilityOf(ele));			
 				wait.until(ExpectedConditions.elementToBeClickable(ele));			
 				//text = ele.getText();
 				
@@ -150,7 +154,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 				
 				logger.info("The element : "+text+" is clicked ");
 				
-				reportStep("The element : "+text+" is clicked "+text, "PASS");
+				reportStep("The element : "+text+" is clicked ", "PASS");
 			} catch (InvalidElementStateException e) {
 				logger.debug("The element : "+text+" is not interactable "+text);
 				reportStep("The element: "+text+" is not interactable", "FAIL");
@@ -285,11 +289,14 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 		public void verifyExactText(WebElement ele, String expectedText) {
 			try {
 				if(getText(ele).equals(expectedText)) {
+					logger.info("The expected text matches the actual "+expectedText);
 					reportStep("The expected text matches the actual "+expectedText,"PASS");
 				}else {
+					logger.debug(" The expected text doesn't matches the actual "+expectedText);
 					reportStep("The expected text doesn't matches the actual "+expectedText,"FAIL");
 				}
 			} catch (WebDriverException e) {
+				logger.debug(" The expected text doesn't matches the actual "+expectedText);
 				reportStep("WebDriverException : "+e.getMessage(), "FAIL");
 			} 
 
@@ -336,6 +343,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 		public void verifySelected(WebElement ele) {
 			try {
 				if(ele.isSelected()) {
+					
 					reportStep("The element "+ele+" is selected","PASS");
 				} else {
 					reportStep("The element "+ele+" is not selected","FAIL");
@@ -351,6 +359,44 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 					reportStep("The element "+ele+" is visible","PASS");
 				} else {
 					reportStep("The element "+ele+" is not visible","FAIL");
+				}
+			} catch (WebDriverException e) {
+				reportStep("WebDriverException : "+e.getMessage(), "FAIL");
+			} 
+		}
+		
+		
+		
+		 public boolean VerifyIsDisplayed(WebElement ele, String elementName) {
+		       boolean bReturn = false;
+		       try {
+		           WebDriverWait wait = new WebDriverWait(driver, 10);
+		           wait.until(ExpectedConditions.visibilityOf(ele));
+		           if (ele.isDisplayed()) {
+		               bReturn = true;
+		               logger.info("The element " +elementName+ "is displayed");
+						reportStep("The element " +elementName+ "is displayed","PASS");
+		               
+		       } 
+		       }
+		       catch (WebDriverException e) {
+		           bReturn = false;
+		           logger.info("The element " +elementName+ "is not displayed");
+					reportStep("The element " +elementName+ "is not displayed","PASS");
+	           }
+		       return bReturn;
+		   }
+
+		
+		public void verifyEnabled(WebElement ele) {
+			try {
+				if(ele.isEnabled()) {
+					reportStep("The element "+ele+" is enabled","PASS");
+					logger.info("The radio button"+ele+" is enabled ");
+					
+				} else {
+					reportStep("The element "+ele+" is disabled","FAIL");
+					logger.debug("The radio button"+ele+" is disabled ");
 				}
 			} catch (WebDriverException e) {
 				reportStep("WebDriverException : "+e.getMessage(), "FAIL");
@@ -373,8 +419,9 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 		public  void switchToFrame(WebElement ele) {
 			try {
 				//driver.switchTo().frame(ele);
-				  WebDriverWait wait = new WebDriverWait(driver,500);
+				  WebDriverWait wait = new WebDriverWait(driver,5000);
 				  wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(ele));
+					
 				logger.info("switch In to the Frame");
 				reportStep("switch In to the Frame ","PASS");
 			} catch (NoSuchFrameException e) {
@@ -520,7 +567,9 @@ public void uploadDocument(String attachment) throws Throwable {
 			long number = (long) Math.floor(Math.random() * 900000000L) + 10000000L; 
 			try {
 				String path = System.getProperty("user.dir");
-				FileUtils.copyFile(driver.getScreenshotAs(OutputType.FILE) , new File(path+"//reports//images//"+number+".jpg"));
+			    FileUtils.copyFile(driver.getScreenshotAs(OutputType.FILE) , new File(path+"//reports//images//"+number+".jpg"));
+			    
+			
 			} catch (WebDriverException e) {
 				System.out.println("The browser has been closed.");
 			} catch (IOException e) {
@@ -550,6 +599,9 @@ public void uploadDocument(String attachment) throws Throwable {
 				reportStep("The browsers could not be closed","FAIL");
 			}
 		}
+		
+		
+		
 		
 		public static void main(String[] args) {
 			

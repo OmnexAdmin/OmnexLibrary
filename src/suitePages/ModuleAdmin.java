@@ -73,17 +73,20 @@ public class ModuleAdmin extends ProjectMethods {
 	}
 	
 	public ModuleAdmin setUserAsModuleAdmin(String code) throws Throwable {
+		Thread.sleep(2000);
 		switchToFrame(eleFrame);
+		Thread.sleep(7000);
 		click(eleClickOnModuleDropdown,"Modules  dropdown");	
+		Thread.sleep(2000);
 		click(eleSelectDocProModule,"Doc pro Module");
 		click(eleClickOnSelectUserButton,"Select User button");
 		Thread.sleep(5000);
 		switchToFrame(eleUserFrame);
-		
+		Thread.sleep(5000);
 		System.out.println("Switched to frame successfully");
 		//click(eleCLickOnUserBasedSearchRadioButton);
 		switchToFrame(eleUserFrame1);
-		//Thread.sleep(5000);
+		Thread.sleep(5000);
 		System.out.println("Switched to frame1 successfully");
 		type(eleEnterCode, code);
 		pressEnterKey(eleEnterCode);
@@ -91,10 +94,11 @@ public class ModuleAdmin extends ProjectMethods {
 		click(eleClickOnDone,"Done button");
 		Thread.sleep(2000);
 		switchToFrame(eleFrame);
+		Thread.sleep(5000);
 		type(eleEnterCode, code);
 		pressEnterKey(eleEnterCode);
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		
 		
 		verifyPartialText(eleValidateuser, code);

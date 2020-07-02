@@ -84,21 +84,28 @@ public class LevelCreationPage extends ProjectMethods {
 		click(eleAllowSubLevelcreation,"Allow sub level creation");
 		click(eleClickOnSave,"Save button");
 		click(eleClickOktoAlertmsg,"Ok button");
+		
+		
+		
 		return this;
 		}
 	
 	public LevelCreationPage createSubLevels(String searchCriteria,String levelName,String subLevelName,String subPrefix,String subReviewDue) throws Throwable {
 		
 		switchToFrame(eleLevelsFrame);
-		
+		Thread.sleep(2500);
 		type(eleEnterSearchCriteria, searchCriteria);
-		//Thread.sleep(2500);
+		Thread.sleep(2500);
+
 		click(eleClickOnSearch,"Search");
 		//Thread.sleep(12500);
 		WebElement eleRightClick= driver.findElementByXPath("//span[text()='"+levelName+"']");
 		rightClickAction(eleRightClick);
+		Thread.sleep(2500);
 		click(eleClickNew,"New button");
+		Thread.sleep(2500);
 		switchToFrame(eleLevelsTreeFrame);
+		Thread.sleep(5000);
 		type(eleLevelName, subLevelName);
 		type(elePrefix, subPrefix);
 		type(eleReviewDue, subReviewDue);

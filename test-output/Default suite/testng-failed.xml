@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases.DummyTestcase">
+      <class name="TestCases.PreRequsite">
         <methods>
-          <include name="setData"/>
           <include name="beforeMethod"/>
+          <include name="login" invocation-numbers="0 2 3 4 5"/>
           <include name="afterTest"/>
-          <include name="requestDraft" invocation-numbers="1 2 3"/>
           <include name="beforeSuite"/>
+          <include name="setData"/>
           <include name="afterSuite"/>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
         </methods>
-      </class> <!-- TestCases.DummyTestcase -->
+      </class> <!-- TestCases.PreRequsite -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

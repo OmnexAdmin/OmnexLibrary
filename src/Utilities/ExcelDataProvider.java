@@ -23,11 +23,11 @@ import java.io.FileInputStream;
 				
 				String path = System.getProperty("user.dir");
 				
-				System.out.println("the path of the excel sheet is"+path);
+				//System.out.println("the path of the excel sheet is"+path);
 				
 				FileInputStream fis = new FileInputStream(path+"\\data\\"+excelName+".xlsx");
 				
-				System.out.println("the excel name is"+excelName);
+				//System.out.println("the excel name is"+excelName);
 				
 				
 				//FileInputStream fis = new FileInputStream("D:/Bhuvana/Bhuvana/Selenium/EwQIMS_POM/src/main/java/data/"+dataSheetName+".xlsx");
@@ -40,7 +40,7 @@ import java.io.FileInputStream;
 				XSSFSheet sheet = workbook.getSheet(dataSheetName);
 			
 				
-				System.out.println("the excel sheet name is "+dataSheetName);
+				//System.out.println("the excel sheet name is "+dataSheetName);
 
 				// get the number of rows
 				int rowCount = sheet.getLastRowNum();

@@ -1,5 +1,6 @@
 package docProPages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -71,8 +72,10 @@ public class NewDocumentDraft extends ProjectMethods{
 	@FindBy(how=How.XPATH,using="//input[@value='Done']")
 	private WebElement eleClickOnDone;
 	
-	@FindBy(how=How.ID,using="btnContinue")
-	private WebElement eleClickOnContinueButton;
+	@FindBy(how=How.ID,using="popup_ok")
+	private WebElement eleClickOktoAlertMessage;
+	
+
 
 	@FindBy(how=How.ID,using="ifrpopuplevel")
 	private WebElement eleLevelPopupFrame;
@@ -80,9 +83,11 @@ public class NewDocumentDraft extends ProjectMethods{
 	@FindBy(how=How.XPATH,using="//iframe[@id='ifr-user']")
 	private WebElement eleUserFrame1;
 	
+	@FindBy(how=How.ID,using="btnContinue")
+	private WebElement eleClickOnContinueButton;
 	
-	
-	
+	@FindBy(how=How.XPATH,using="//button[@title='Close']")
+	private WebElement eleClosePopup;
 	
 	public NewDocumentDraft(RemoteWebDriver driver,ExtentTest test) {
 		this.driver = driver;
@@ -92,46 +97,59 @@ public class NewDocumentDraft extends ProjectMethods{
 	
 	}
 
-	public NewDocumentDraft uploadNewDraft(String searchCriteria,String documentNumber,String documentName,String attachment,String code ) throws Throwable {
+	public Actions uploadNewDraft(String searchCriteria,String documentNumber,String documentName,String attachment,String code ) throws Throwable {
 		
 		switchToFrame(eleFrame);
-		Thread.sleep(10000);
+		
 		click(eleClickOnSelectLevelButton,"Select Level button");
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		//switchToWindow(0);
 		switchToFrame(eleLevelPopupFrame);
-		Thread.sleep(20000);
+		//Thread.sleep(20000);
 		click(eleEnterSearchCriteria,"Search textbox ");
 		type(eleEnterSearchCriteria, searchCriteria);
 		click(eleClickonSearchIcon,"Search icon");
 		WebElement eleClickOnLevel=driver.findElementByXPath("//span[text()='"+searchCriteria+"']");
 		click(eleClickOnLevel,"level");
-		click(eleClickonDoneButton,"Done button");
+		//click(eleClickonDoneButton,"Done button");
 		//switchToWindow(1);
 		switchToFrame(eleFrame);
+		//Thread.sleep(5000);
 		type(eleEnterDocNum, documentNumber);
 		type(eleEnterDocName, documentName);
 		//click(eleAttachDoc);
 		//uploadDocument(attachment);
 		eleAttachDoc.sendKeys(attachment);
-		click(eleClickOnDraftViewersIcon,"Draft viewers icon");
-		switchToMultipleFrames("ifrUsers","ifr-user");
-		//switchToFrame(eleUserFrame);
-		//click(eleCLickOnUserBasedSearchRadioButton);
-		//switchToFrame(eleUserFrame1);
-		Thread.sleep(15000);
-		type(eleEnterCode, code);
-		click(eleCLickOnSearchFilter,"Search filter");
-		click(eleCLickonEqualsfilter," Equals filter in search criteria");
-		driver.findElementById("gs_Empcode").sendKeys(Keys.ENTER);
-		click(eleClickOnUserToSelect,"Select user checkbox");
-		click(eleClickOnDone,"Done button");
-		switchToFrame(eleFrame);
-		click(eleClickOnContinueButton,"Continue button");
 		
-		//Thread.sleep(5000);
-		
-		return this;
+		if(code!="")
+		 {
+		  click(eleClickOnDraftViewersIcon,"Draft viewers icon");
+		  switchToMultipleFrames("ifrUsers","ifr-user"); 
+		  //switchToFrame(eleUserFrame);
+		  //click(eleCLickOnUserBasedSearchRadioButton); switchToFrame(eleUserFrame1);
+		  //Thread.sleep(5000); 
+		  type(eleEnterCode, code);
+		  click(eleCLickOnSearchFilter,"Search filter");
+		  click(eleCLickonEqualsfilter," Equals filter in search criteria");
+		  driver.findElementById("gs_Empcode").sendKeys(Keys.ENTER);
+		  click(eleClickOnUserToSelect,"Select user checkbox");
+		  click(eleClickOnDone,"Done button"); switchToFrame(eleFrame);
+		  click(eleClickOnContinueButton,"Continue button");
+		}
+		else {
+			//Code for not selecting draft viewers and continue
+			//click(eleClosePopup,"close popup icon");
+		  driver.findElementById("btnContinue").click();
+		  Alert alert=driver.switchTo().alert(); Thread.sleep(2000);
+		  System.out.println("Alert message is"+ alert.getText()); alert.accept();
+		  
+		 
+		  
+		  }
+		  
+		  //Thread.sleep(3000);
+		 
+		return new Actions(driver,test);
 		
 		
 		

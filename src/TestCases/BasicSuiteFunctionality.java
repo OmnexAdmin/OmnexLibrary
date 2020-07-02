@@ -7,13 +7,14 @@ import org.testng.annotations.Test;
 import CommonMethods.ProjectMethods;
 import suitePages.LoginPage;
 
+
 public class BasicSuiteFunctionality extends ProjectMethods {
 
 	@BeforeClass
 	public void setData() {
 		excelName = "DocProTestData";
 		dataSheetName="TC001to5";
-		test = startTestCase("Browser Invoked", "TC Execuion");
+		test = startTestCase("SmokeTest_Suite", "Basic Suite Functionality(6TCs)");
 		category = "Smoke";
 		authors = "Bhuvana";
 		browserName = "chrome";
@@ -38,8 +39,9 @@ public class BasicSuiteFunctionality extends ProjectMethods {
 
 		case "TC001":
 		
-			new LoginPage(driver, test).login(userName, passWord);
-			break;
+			new LoginPage(driver, test)
+			.login(userName, passWord);
+		    break;
 
 		case "TC002":
 			new LoginPage(driver, test).invalidLogin(userName, passWord);
@@ -49,6 +51,7 @@ public class BasicSuiteFunctionality extends ProjectMethods {
 			new LoginPage(driver, test).login(userName, passWord).clickOnUersTab().clickOnUsersMenu().addUsers(code,
 					fName, lName, eMail, uName, pwd, confirmPassword);
 			break;
+			
 
 		case "TC004":
 			new LoginPage(driver, test).login(userName, passWord).clickOnModuleAdminMenu().setUserAsModuleAdmin(code);

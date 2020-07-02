@@ -15,18 +15,19 @@ public class DocProBasicFunctionality extends ProjectMethods {
 		System.out.println("before class1");
 		
 		excelName = "DocProTestData";
-		dataSheetName="TC006to17";
-		test = startTestCase("Browser Invoked", "TC Execuion");
+		dataSheetName="TC006to23";
+		test = startTestCase("SmokeTest_Suite", "DocPro Basic Functionality(17TCs)");
 		category= "Smoke";
 		authors	="Bhuvana";
 		browserName ="chrome";
-		System.out.println("before class2");
+		
 	}
 
 	@Test(dataProvider="fetchData")
 	
 	
-	public void createParentLevels(String TestcaseNumber,String Runmode,String Scenario, String userName, String passWord,String levelName,String prefix,String reviewDue,String searchCriteria,String subLevelName,String subPrefix,String subReviewDue,String documentNumber,String documentName,String attachment,String code,String groupName,String draftComments, String reasonForRequest,String changesRequired, String revision, String docOwner  ) throws Throwable {
+	public void createParentLevels(String TestcaseNumber,String Runmode,String Scenario, String userName, String passWord,String levelName,String prefix,String reviewDue,String searchCriteria,String subLevelName,String subPrefix,String subReviewDue,String documentNumber,String documentName,String attachment,String code,String groupName,String draftComments, String reasonForRequest,String changesRequired, String revision, String docOwner,String routeName,String routedesc,String minNumofApproversReqd, String position,String approverPwd,
+			  String newApproverPwd, String confirmApproverPwd,String existingDocRouteName) throws Throwable {
 		
 		
 		
@@ -43,6 +44,15 @@ public class DocProBasicFunctionality extends ProjectMethods {
 		if(Runmode.contains("N")) {	
 		throw new SkipException("Run mode set as No");
 		}
+
+		
+		  if(TestcaseNumber.contains("TC015")|| TestcaseNumber.contains("TC0021")) {
+			  new LoginPage(driver,test) 
+			  .moduleLandingPageLogin(userName, passWord)
+		      .clickonDocumentstab() 
+		      .clickOnDocumentsMenu() 
+		      .reviseDocument(levelName,documentNumber, attachment, reasonForRequest, changesRequired); }
+		 
 		
 		
 		switch(TestcaseNumber) {
@@ -55,7 +65,7 @@ public class DocProBasicFunctionality extends ProjectMethods {
 			new LoginPage(driver,test)
 			.login(userName, passWord)
 			.clickOnLevelsMenu()
-			.createParentLevels( levelName, prefix, reviewDue);
+			.createParentLevels(levelName, prefix, reviewDue);
 			break;
 
 		case"TC007":
@@ -133,13 +143,14 @@ public class DocProBasicFunctionality extends ProjectMethods {
 			.pendingDocumentDrafts(documentName, attachment, reasonForRequest, changesRequired);
 			break;
 			
-		case "TC015":
-			new LoginPage(driver,test)
-			.moduleLandingPageLogin(userName, passWord)
-			.clickonDocumentstab()
-			.clickOnDocumentsMenu()
-			.reviseDocument(levelName, documentNumber, attachment, reasonForRequest, changesRequired, documentName, revision, docOwner);
-			break;
+		
+			
+		/*
+		 * case "TC015": new LoginPage(driver,test) .moduleLandingPageLogin(userName,
+		 * passWord) .clickonDocumentstab() .clickOnDocumentsMenu()
+		 * .reviseDocument(levelName, documentNumber, attachment, reasonForRequest,
+		 * changesRequired); break;
+		 */
 			
 		case "TC016":
 			new LoginPage(driver,test)
@@ -157,7 +168,55 @@ public class DocProBasicFunctionality extends ProjectMethods {
 			.deleteDocument(levelName, documentNumber, reasonForRequest, changesRequired);
 			break;
 			
-		default:
+		case "TC018":
+			new LoginPage(driver, test)
+			.moduleLandingPageLogin(userName, passWord)
+			.clickOnRoutesMenu()
+			.createRoute(routeName, routedesc, code,minNumofApproversReqd, position);
+			break;
+			
+		case "TC019":
+			new LoginPage(driver,test)
+			.moduleLandingPageLogin(userName, passWord)
+			.clickOnFolderManagement()
+			.setRoute(searchCriteria, routeName,existingDocRouteName);
+			break;
+			
+		
+		  case "TC020":
+		  
+		  new LoginPage(driver,test)
+		  .moduleLandingPageLogin(userName, passWord)
+		  .clickOnDocProSettingsMenu() 
+		  .disable2ndPwd();
+		  break;
+		  
+		/*
+		 * case "TC021":
+		 * 
+		 * new LoginPage(driver,test) .moduleLandingPageLogin(userName, passWord)
+		 * .clickonDocumentstab() .clickOnDocumentsMenu()
+		 * .reviseDocument(levelName,documentNumber, attachment, reasonForRequest,
+		 * changesRequired); break;
+		 */
+		  
+		  
+		  
+		  case "TC022":
+		  
+		  new LoginPage(driver,test) .moduleLandingPageLogin(userName, passWord)
+		  .clickOnActionsMenu() .requestsNeedingApproval(documentName, approverPwd,
+		  newApproverPwd, confirmApproverPwd); break;
+		  
+		  case "TC023":
+		  
+		  new LoginPage(driver,test) .moduleLandingPageLogin(userName,passWord)
+		  .clickonDocumentstab() .clickOnDocumentsMenu()
+		  .validateDocISRevised(levelName, documentNumber, documentName,
+		  revision,docOwner); break;
+		  
+		  
+		 		default:
 			break;
 
 

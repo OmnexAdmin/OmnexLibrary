@@ -11,12 +11,13 @@ import com.relevantcodes.extentreports.ExtentTest;
 
 import CommonMethods.ProjectMethods;
 
+
 public class UserCreationPage extends ProjectMethods {
 
 	@FindBy(how=How.XPATH,using="//iframe[@id='Detailview']")
 	private WebElement eleUsersFrame;
 
-	@FindBy(how=How.XPATH,using="(//input[contains(@type,'submit')])[1]")
+	@FindBy(how=How.XPATH,using="(//input[@type='submit'])[1]")
 	private WebElement eleClickOnAddButton;
 
 	@FindBy(how=How.ID,using="txtcode")

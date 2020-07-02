@@ -102,6 +102,10 @@ public class Routes extends ProjectMethods{
 	@FindBy(how=How.ID,using="btnSave")
 	private WebElement eleClickOnSaveButton;
 	
+	
+	
+	@FindBy(how=How.ID,using="popup_ok")
+	private WebElement eleClickOktoAlert;
 
 	public Routes(RemoteWebDriver driver, ExtentTest test) {
 		// TODO Auto-generated constructor stub
@@ -130,24 +134,27 @@ public class Routes extends ProjectMethods{
 		{
 
 		case "R1":
-
+			Thread.sleep(5000);
 			switchToFrame(eleRoutesFrame);
+			Thread.sleep(5000);
 			click(eleClickOnNewRoute, "New Route button");
 			type(eleEnterRouteName, routeName);
 			type(eleEnterRouteDescription, routedesc);
 			click(eleClickOnAddUsersButton, "Add users button");
 			//switchToFrame(eleUserFrame);
 			switchToMultipleFrames("ifrUsers","ifr-user");
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 
 		type(eleEnterCode, code);
 		pressEnterKey(eleEnterCode);
 		click(eleClickOnCheckAllCheckbox,"Select user checkbox");
 		click(eleClickOnDone,"Done button");
 		switchToFrame(eleRoutesFrame);
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		click(eleClickOnAllApproversRequired,"All Approvers required checkbox");
 		click(eleClickOnSaveButton, "Save button");
+		click(eleClickOktoAlert,"OK button");
+		
 		break;
 		
 		//* Route  has 2 rounds 
@@ -155,15 +162,16 @@ public class Routes extends ProjectMethods{
 		//* 2nd round has 2 approvers and both are mandatory
 		case "R2":
 		//else if(routeName.matches( "R2")) {
-
+			Thread.sleep(5000);
 			switchToFrame(eleRoutesFrame);
+			Thread.sleep(5000);
 			click(eleClickOnNewRoute, "New Route button");
 			type(eleEnterRouteName, routeName);
 			type(eleEnterRouteDescription, routedesc);
 			click(eleClickOnAddUsersButton, "Add users button");
 			//switchToFrame(eleUserFrame);
 			switchToMultipleFrames("ifrUsers","ifr-user");
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			//1st round
 			type(eleEnterCode, code);
 			pressEnterKey(eleEnterCode);
@@ -172,24 +180,25 @@ public class Routes extends ProjectMethods{
 			//click(eleClickOnCheckAllCheckbox,"Select user checkbox");
 			click(eleClickOnDone,"Done button");
 			switchToFrame(eleRoutesFrame);
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			click(eleNonMandatoryApprover1, "Uncheck Is mandatory checkbox for Approver 1 ");
 			click(eleNonMandatoryApprover2, "Uncheck Is mandatory checkbox for approver 2");
-			click(eleNonMandatoryApprover3, "Uncheck Is mandatory checkbox for approver 3");
 			click(eleClickOnSaveButton, "Save button");
-			Thread.sleep(3000);
+			click(eleClickOktoAlert,"OK button");
+			Thread.sleep(5000);
 			//2nd round
 			click(eleclickOn2ndRoundLink, "2ndRound link");
 			click(eleClickOnAddUsersButton, "Add users button");
 			switchToMultipleFrames("ifrUsers","ifr-user");
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			type(eleEnterCode, "(VH)");
 			pressEnterKey(eleEnterCode);
 			click(eleClickOnCheckAllCheckbox,"Select user checkbox");
 			click(eleClickOnDone,"Done button");
 			switchToFrame(eleRoutesFrame);
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			click(eleClickOnSaveButton, "Save button");
+			click(eleClickOktoAlert,"OK button");
 			
 		break;
 		
@@ -199,13 +208,14 @@ public class Routes extends ProjectMethods{
 		case "R3":
 
 			switchToFrame(eleRoutesFrame);
+			Thread.sleep(5000);
 			click(eleClickOnNewRoute, "New Route button");
 			type(eleEnterRouteName, routeName);
 			type(eleEnterRouteDescription, routedesc);
 			click(eleClickOnAddUsersButton, "Add users button");
 			//switchToFrame(eleUserFrame);
 			switchToMultipleFrames("ifrUsers","ifr-user");
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		//else if(routeName.matches( "R3")) {
 			//1st round
 			type(eleEnterCode, code);
@@ -213,27 +223,33 @@ public class Routes extends ProjectMethods{
 			click(eleClickOnCheckAllCheckbox,"Select user checkbox");
 			click(eleClickOnDone,"Done button");
 			switchToFrame(eleRoutesFrame);
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			click(eleNonMandatoryApprover1, "Uncheck Is mandatory checkbox for Approver 1");
 			click(eleNonMandatoryApprover2, "Uncheck Is mandatory checkbox for approver 2");
+			click(eleNonMandatoryApprover3, "Uncheck Is mandatory checkbox for approver 3");
+			
 			type(eleEnterMinNumofApproversReqd, minNumofApproversReqd);
 			click(eleClickOnSaveButton, "Save button");
+			click(eleClickOktoAlert,"OK button");
+			
+			Thread.sleep(3000);
 			//2nd round
 			click(eleclickOn2ndRoundLink, "2ndRound link");
 			click(eleClickOnAddUsersButton, "Add users button");
 			switchToMultipleFrames("ifrUsers","ifr-user");
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			type(eleEnterCode, "FA");
 			pressEnterKey(eleEnterCode);
 			click(eleClickOnCheckAllCheckbox,"Select user checkbox");
 			click(eleClickOnDone,"Done button");
 			switchToFrame(eleRoutesFrame);
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			click(eleNonMandatoryApprover1, "Uncheck Is mandatory checkbox for Approver 1");
 			click(eleNonMandatoryApprover2, "Uncheck Is mandatory checkbox for approver 2");
 			click(eleNonMandatoryApprover3, "Uncheck Is mandatory checkbox for approver 3");
 			click(eleNonMandatoryApprover4, "Uncheck Is mandatory checkbox for approver 4");
 			click(eleClickOnSaveButton, "Save button");
+			click(eleClickOktoAlert,"OK button");
 			
 		break;
 		
@@ -244,23 +260,26 @@ public class Routes extends ProjectMethods{
 		//else if(routeName.matches( "R4")) {
 
 			switchToFrame(eleRoutesFrame);
+			Thread.sleep(5000);
 			click(eleClickOnNewRoute, "New Route button");
 			type(eleEnterRouteName, routeName);
 			type(eleEnterRouteDescription, routedesc);
 			click(eleClickOnAddUsersButton, "Add users button");
 			//switchToFrame(eleUserFrame);
 			switchToMultipleFrames("ifrUsers","ifr-user");
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			//1st round
 			type(eleEnterCode, code);
 			pressEnterKey(eleEnterCode);
 			click(eleClickOnCheckAllCheckbox,"Select user checkbox");
 			click(eleClickOnDone,"Done button");
 			switchToFrame(eleRoutesFrame);
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			click(eleNonMandatoryApprover1, "Uncheck Is mandatory checkbox for Approver 1");
 			click(eleNonMandatoryApprover2, "Uncheck Is mandatory checkbox for approver 2");
 			click(eleClickOnSaveButton, "Save button");
+			click(eleClickOktoAlert,"OK button");
+			Thread.sleep(3000);
 			//2nd round, add position based round
 			click(eleclickOn2ndRoundLink, "2ndRound link");
 			click(eleClickOnAddPositionsButton, "Add positions button");
@@ -269,8 +288,9 @@ public class Routes extends ProjectMethods{
 			click(eleclickOnCheckAllCheckbox,"Checkbox");
 			click(eleClickOnSavePosition,"Save Position");
 			switchToFrame(eleRoutesFrame);
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			click(eleClickOnSaveButton, "Save button");
+			click(eleClickOktoAlert,"OK button");
 			
 		break;
 		

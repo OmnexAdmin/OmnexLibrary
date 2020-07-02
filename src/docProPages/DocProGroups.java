@@ -1,3 +1,4 @@
+
 package docProPages;
 
 import org.openqa.selenium.By;
@@ -109,9 +110,15 @@ public class DocProGroups extends ProjectMethods {
 	public DocProGroups createGroup(String groupName,String code) throws Throwable {
 	
 		switchToFrame(eleLHSFrame);
+		Thread.sleep(10000);
 		click(eleclickOnAddButton,"Add button");
-		//Thread.sleep(2000);
+		System.out.println("Add button is clicked");
+		Thread.sleep(5000);
 		type(eleEnterGroupName, groupName);
+		
+		System.out.println("group name is entered");
+		Thread.sleep(2000);
+		
 		click(eleclickOnSaveButton,"Save button");
 		click(eleClickOktoAlert,"Ok button");
 		//Thread.sleep(20000);
@@ -167,6 +174,7 @@ public class DocProGroups extends ProjectMethods {
 		
 		click(eleClickOnSave,"Save");
 		click(eleClickOktoAlert,"OK button");
+		
 		
 		return this;
 		

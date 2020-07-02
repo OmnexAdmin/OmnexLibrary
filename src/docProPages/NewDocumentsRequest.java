@@ -60,7 +60,7 @@ public class NewDocumentsRequest extends ProjectMethods {
 	private WebElement elePressTabkeyforIssueNum;
 	
 	
-	@FindBy(how=How.XPATH,using="//input[@type='file']")
+	@FindBy(how=How.XPATH,using="//input[@id='fileUploadControl']")
 	private WebElement eleAttachDoc;
 	
 	@FindBy(how=How.ID,using="btnAddDocument")
@@ -91,9 +91,10 @@ public class NewDocumentsRequest extends ProjectMethods {
 	click(eleClickonSearchIcon,"Search icon");
 	WebElement eleClickOnLevel=driver.findElementByXPath("//span[text()='"+searchCriteria+"']");
 	click(eleClickOnLevel,"level");
-	click(eleClickonDoneButton,"Done button");
+	//click(eleClickonDoneButton,"Done button");
 	//switchToWindow(1);
 	switchToFrame(eleFrame);
+	Thread.sleep(5000);
 	type(eleEnterDocNum, documentNumber);
 	type(eleEnterDocName, documentName);
 	//pressTabKey(elePressTabkeyforRev);
@@ -103,6 +104,10 @@ public class NewDocumentsRequest extends ProjectMethods {
 	//pressTabKey(eleAttachDoc);
 	//pressEnterKey(eleAttachDoc);
 	//eleAttachDoc.sendKeys("D:\\Bhuvana\\Bhuvana 218 machine backup as of 2nd June 2017\\Bhuvana\\Documents\\Attachments for IC\\Sample Template.doc");
+	
+	//WebElement eleAttachDoc=driver.findElementByXPath("//input[@id='fileUploadControl']");
+	
+	//click(eleAttachDoc,"Browse button");
 	eleAttachDoc.sendKeys(attachment);
 
 	//type(eleAttachDoc, attachment);

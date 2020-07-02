@@ -68,20 +68,26 @@ public class Positions extends ProjectMethods{
 	public Positions createPosition(String position ,String desc ,String code) throws Throwable {
 		
 		switchToFrame(eleFrame);
+		
 		click(eleClickOnAdd, "Add button");
+		Thread.sleep(2000);
 		type(eleEnterPosition, position);
 		type(eleEnterDesc, desc);
 		click(eleClickOnAddUserButton, "Add Users button");
 		switchToFrame(eleUserFrame);
+		//Thread.sleep(5000);
 		switchToFrame(eleUserFrame1);
+		//Thread.sleep(5000);
 		type(eleEnterCode, code);
 		pressEnterKey(eleEnterCode);
 		click(eleClickOnCheckAllCheckbox,"Select user checkbox");
 		click(eleClickOnDone,"Done button");
 		switchToFrame(eleFrame);
-		Thread.sleep(3000);
+		//Thread.sleep(5000);
 		click(eleClickOnSave,"Save button");
+		Thread.sleep(2000);
 		click(eleClickOnOktoAlertMsg,"Ok button in alert message");
+		Thread.sleep(5000);
 		type(eleEnterPositionToSearch, position);
 		pressEnterKey(eleEnterPositionToSearch);
 		verifyDisplayed(eleEnterPositionToSearch);

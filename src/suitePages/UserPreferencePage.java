@@ -30,9 +30,10 @@ public class UserPreferencePage extends ProjectMethods{
 	}
 	
 	
-	public UserPreferencePage setDocProasLandingPage(){
+	public UserPreferencePage setDocProasLandingPage() throws Throwable{
 		//String value="Document Pro";
 		switchToFrame(eleUserPrefFrame);
+		Thread.sleep(5000);
 		selectDropDownUsingText(eleSelectDocProModule, "Document Pro");
 		click(eleClickOnSave,"Save button");
 		return this;

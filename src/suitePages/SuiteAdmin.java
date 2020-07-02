@@ -63,15 +63,15 @@ public class SuiteAdmin extends ProjectMethods {
 	
 	public SuiteAdmin setUserAsSuiteAdmin(String code) throws Throwable {
 		switchToFrame(eleFrame);
-	
+		Thread.sleep(5000);
 		click(eleClickOnSelectUserButton,"Select User button");
 		Thread.sleep(5000);
 		switchToFrame(eleUserFrame);
-		
+		Thread.sleep(5000);
 		System.out.println("Switched to frame successfully");
 		//click(eleCLickOnUserBasedSearchRadioButton);
 		switchToFrame(eleUserFrame1);
-		//Thread.sleep(5000);
+		Thread.sleep(5000);
 		System.out.println("Switched to frame1 successfully");
 		type(eleEnterCode, code);
 	
@@ -80,11 +80,11 @@ public class SuiteAdmin extends ProjectMethods {
 		click(eleClickOnDone,"Done button");
 	
 		switchToFrame(eleFrame);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		type(eleEnterCode, code);
 		pressEnterKey(eleEnterCode);
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		
 		verifyPartialText(eleValidateuser, code);
 	

@@ -20,7 +20,7 @@ package CommonMethods;
 		@BeforeSuite
 		public void beforeSuite(){
 			startResult();
-			System.out.println("Before suite ");
+			
 		}
 
 		@BeforeTest
@@ -30,10 +30,8 @@ package CommonMethods;
 	@BeforeMethod 
 		public void beforeMethod(){
 			//test = startTestCase(testCaseName, testDescription);
-		System.out.println("before method1");	
 		test.assignCategory(category);
 			test.assignAuthor(authors);
-			System.out.println("before method2");	
 			startApp(browserName);
 			
 		}
@@ -54,7 +52,7 @@ package CommonMethods;
 			closeAllBrowsers();		
 		}
 		
-		@DataProvider(name="fetchData")
+		@DataProvider(name="fetchData",parallel=false)
 		public  Object[][] getData(){
 			//return ExcelDataProvider.getData(dataSheetName);
 			//return ExcelDataProvider.getData(excelName);

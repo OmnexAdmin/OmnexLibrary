@@ -41,6 +41,10 @@ public class DocProAdminHomePage extends ProjectMethods {
 	@FindBy(how=How.LINK_TEXT,using="Routes")
 	private WebElement eleClickOnRoutesMenu;
 	
+	@FindBy(how=How.LINK_TEXT,using="DocPro Settings")
+	private WebElement  eleClickOnDocProSettingsMenu;
+	
+	
 	
 	public DocProAdminHomePage(RemoteWebDriver driver,ExtentTest test) {
 		this.driver = driver;
@@ -101,6 +105,13 @@ public class DocProAdminHomePage extends ProjectMethods {
 	public Routes clickOnRoutesMenu() {
 		click(eleClickOnRoutesMenu, "Routes menu");
 		return new Routes(driver, test);
+		
+	}
+	
+	public DocProSettings clickOnDocProSettingsMenu() {
+		
+		click(eleClickOnDocProSettingsMenu,"Doc Pro Settings menu");
+		return new DocProSettings(driver, test);
 		
 	}
 

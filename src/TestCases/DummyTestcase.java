@@ -12,7 +12,7 @@ public class DummyTestcase extends ProjectMethods{
 	public void setData() {
 		
 		excelName = "TestingExcel";
-		dataSheetName="Sheet1";
+		dataSheetName="pos";
 
 		test = startTestCase("Smoketesttarts", "Browser launched successfully");
 		
@@ -21,20 +21,28 @@ public class DummyTestcase extends ProjectMethods{
 		browserName ="chrome";
 	}
 	
+	
+
+	
 	@Test(dataProvider="fetchData",groups="regression")
 	
-	public void requestDraft(String userName, String passWord ,String routeName,String routedesc,String code, String minNumofApproversReqd , String position) throws Throwable {
-		
-		testCaseName = "TC010 ";
-		testDescription = "New draft request";
+public void requestDraft(String userName, String passWord, String code,
+		String fName, String lName, String eMail, String uName, String pwd,
+		String confirmPassword,String levelName, String prefix, String reviewDue,
+		String searchCriteria, String subLevelName, String subPrefix, String subReviewDue,
+		String groupName,String position, String desc) throws Throwable {
+	
+		testCaseName = "Dummy ";
+		testDescription = "Dummy testcase";
 		test = startTestCase(testCaseName, testDescription);
 	
+		new LoginPage(driver,test)
+		.login(userName, passWord) 
+		  .clickOnSystemTab()
+		  .clickOnPositionsMenu()
+		  .createPosition(position, desc, code);
 		
-		new LoginPage(driver, test)
-		.moduleLandingPageLogin(userName, passWord)
-		.clickOnRoutesMenu()
-		.createRoute(routeName, routedesc, code, minNumofApproversReqd, position);
-		
+	
 	}
 
 }

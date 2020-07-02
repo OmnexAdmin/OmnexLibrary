@@ -93,21 +93,22 @@ public class TOC extends ProjectMethods{
 		
 	}
 	
-	public TOC reviseDocument(String levelName,String documentNumber,String attachment,String reasonForRequest, String changesRequired,String documentName,String revision,String docOwner) throws Throwable {
+	public Actions reviseDocument(String levelName,String documentNumber,String attachment,String reasonForRequest, String changesRequired) throws Throwable {
 		
 		switchToFrame(eleLevelsFrame);
-		//Thread.sleep(2000);
+		Thread.sleep(5000);
 		click(eleEnterLevelNameToSearch,"Level search textbox");
 		type(eleEnterLevelNameToSearch, levelName);
 		click(eleClickOnSearchIcon,"Search icon");
 		WebElement eleClickOnLevel= driver.findElementByXPath("//span[text()='"+levelName+"']");
 		click(eleClickOnLevel,"Level");
 		switchToFrame(eleTOCFrame);
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		WebElement eleRightClickOnDocumentNumberLink= driver.findElementByXPath("//a[text()='"+documentNumber+"']");
 		rightClickAction(eleRightClickOnDocumentNumberLink);
 		click(eleClickOnChangeRequestOption,"Change request option");
-		click(eleClickOnChooseFileToAttachDoc, "Choose file button");
+		Thread.sleep(5000);
+		//click(eleClickOnChooseFileToAttachDoc, "Choose file button");
 		eleClickOnChooseFileToAttachDoc.sendKeys(attachment);
 		//click(eleClickOnChooseFileToAttachDoc);
 		//uploadDocument(attachment);
@@ -136,20 +137,22 @@ public class TOC extends ProjectMethods{
 		*/
 
 		
-		return this;
+		return new Actions(driver,test);
+		
 		
 	}
 	
-	public TOC validateDocISRevised(String levelName,String documentNumber,String documentName,String revision,String docOwner ) {
+	public TOC validateDocISRevised(String levelName,String documentNumber,String documentName,String revision,String docOwner ) throws Throwable {
 		
 		switchToFrame(eleLevelsFrame);
-		//Thread.sleep(2000);
+		Thread.sleep(4000);
 		click(eleEnterLevelNameToSearch,"Level search textbox");
 		type(eleEnterLevelNameToSearch, levelName);
 		click(eleClickOnSearchIcon,"Search icon");
 		WebElement eleClickOnLevel= driver.findElementByXPath("//span[text()='"+levelName+"']");
 		click(eleClickOnLevel,"Level ");
 		switchToFrame(eleTOCFrame);
+		Thread.sleep(5000);
 		type(eleEnterDocNumSearchCriteria, documentNumber);
 		pressEnterKey(eleEnterDocNumSearchCriteria);
 		//eleEnterDocNumSearchCriteria.sendKeys(Keys.ENTER);

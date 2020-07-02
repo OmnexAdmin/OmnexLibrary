@@ -50,8 +50,7 @@ public abstract class Reporter {
 	public ExtentReports startResult(){
 		
 		String path= System.getProperty("user.dir");
-		extent = new ExtentReports(path+"\\reports\\result.html", false);
-		
+		extent = new ExtentReports(path+"\\reports\\result.html", true);
 		
 		extent.loadConfig(new File(path+"\\data\\extent-config.xml"));
 		return extent;
